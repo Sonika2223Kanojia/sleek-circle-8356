@@ -1,13 +1,3 @@
-// import React from "react";
-// const Homepage=()=>{
-// return (
-//     <>
-    
-//     </>
-// )
-// }
-// export default Homepage;
-
 
 import {
   Box,
@@ -150,40 +140,40 @@ const DesktopNav = () => {
   )
 }
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
-  return (
-    <Box
-      as="a"
-      href={href}
-      role={'group'}
-      display={'block'}
-      p={2}
-      rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
-      <Stack direction={'row'} align={'center'}>
-        <Box>
-          <Text
-            transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
-            fontWeight={500}>
-            {label}
-          </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={'all .3s ease'}
-          transform={'translateX(-10px)'}
-          opacity={0}
-          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-          justify={'flex-end'}
-          align={'center'}
-          flex={1}>
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Box>
-  )
-}
+// const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+//   return (
+//     <Box
+//       as="a"
+//       href={href}
+//       role={'group'}
+//       display={'block'}
+//       p={2}
+//       rounded={'md'}
+//       _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+//       <Stack direction={'row'} align={'center'}>
+//         <Box>
+//           <Text
+//             transition={'all .3s ease'}
+//             _groupHover={{ color: 'pink.400' }}
+//             fontWeight={500}>
+//             {label}
+//           </Text>
+//           <Text fontSize={'sm'}>{subLabel}</Text>
+//         </Box>
+//         <Flex
+//           transition={'all .3s ease'}
+//           transform={'translateX(-10px)'}
+//           opacity={0}
+//           _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+//           justify={'flex-end'}
+//           align={'center'}
+//           flex={1}>
+//           <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+//         </Flex>
+//       </Stack>
+//     </Box>
+//   )
+// }
 
 const MobileNav = () => {
   return (
@@ -195,98 +185,98 @@ const MobileNav = () => {
   )
 }
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure()
+// const MobileNavItem = ({ label, children, href }: NavItem) => {
+//   const { isOpen, onToggle } = useDisclosure()
 
-  return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Box
-        py={2}
-        as="a"
-        href={href ?? '#'}
-        justifyContent="space-between"
-        alignItems="center"
-        _hover={{
-          textDecoration: 'none',
-        }}>
-        <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={'all .25s ease-in-out'}
-            transform={isOpen ? 'rotate(180deg)' : ''}
-            w={6}
-            h={6}
-          />
-        )}
-      </Box>
+//   return (
+//     <Stack spacing={4} onClick={children && onToggle}>
+//       <Box
+//         py={2}
+//         as="a"
+//         href={href ?? '#'}
+//         justifyContent="space-between"
+//         alignItems="center"
+//         _hover={{
+//           textDecoration: 'none',
+//         }}>
+//         <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+//           {label}
+//         </Text>
+//         {children && (
+//           <Icon
+//             as={ChevronDownIcon}
+//             transition={'all .25s ease-in-out'}
+//             transform={isOpen ? 'rotate(180deg)' : ''}
+//             w={6}
+//             h={6}
+//           />
+//         )}
+//       </Box>
 
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
-          align={'start'}>
-          {children &&
-            children.map((child) => (
-              <Box as="a" key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Box>
-            ))}
-        </Stack>
-      </Collapse>
-    </Stack>
-  )
-}
+//       <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
+//         <Stack
+//           mt={2}
+//           pl={4}
+//           borderLeft={1}
+//           borderStyle={'solid'}
+//           borderColor={useColorModeValue('gray.200', 'gray.700')}
+//           align={'start'}>
+//           {children &&
+//             children.map((child) => (
+//               <Box as="a" key={child.label} py={2} href={child.href}>
+//                 {child.label}
+//               </Box>
+//             ))}
+//         </Stack>
+//       </Collapse>
+//     </Stack>
+//   )
+// }
 
-interface NavItem {
-  label: string
-  subLabel?: string
-  children?: Array<NavItem>
-  href?: string
-}
+// interface NavItem {
+//   label: string
+//   subLabel?: string
+//   children?: Array<NavItem>
+//   href?: string
+// }
 
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Inspiration',
-    children: [
-      {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
-      },
-      {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Find Work',
-    children: [
-      {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
-      },
-      {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Learn Design',
-    href: '#',
-  },
-  {
-    label: 'Hire Designers',
-    href: '#',
-  },
-]
+// const NAV_ITEMS: Array<NavItem> = [
+//   {
+//     label: 'Inspiration',
+//     children: [
+//       {
+//         label: 'Explore Design Work',
+//         subLabel: 'Trending Design to inspire you',
+//         href: '#',
+//       },
+//       {
+//         label: 'New & Noteworthy',
+//         subLabel: 'Up-and-coming Designers',
+//         href: '#',
+//       },
+//     ],
+//   },
+//   {
+//     label: 'Find Work',
+//     children: [
+//       {
+//         label: 'Job Board',
+//         subLabel: 'Find your dream design job',
+//         href: '#',
+//       },
+//       {
+//         label: 'Freelance Projects',
+//         subLabel: 'An exclusive list for contract work',
+//         href: '#',
+//       },
+//     ],
+//   },
+//   {
+//     label: 'Learn Design',
+//     href: '#',
+//   },
+//   {
+//     label: 'Hire Designers',
+//     href: '#',
+//   },
+// ]
