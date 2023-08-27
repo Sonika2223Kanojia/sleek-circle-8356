@@ -18,7 +18,7 @@ export default function Homepage(){
         
       </Box>
     </Box>
-    <Box width="100%" height="150px" display="flex" justifyContent="center">
+    <Box width="100%" h="150px" display="flex" justifyContent="center">
                 <Center >
                     <Text fontSize="30px" fontWeight="600">
                     Learn. Plan. Protect. All in one place. Here’s how.
@@ -49,7 +49,7 @@ export default function Homepage(){
                 <GridItem w='500px' h='200px'  bg={bcolor}    paddingTop="35px" >
                   <Text fontSize="20px">Get personalized loan offers
 </Text>
-                  <Text fontSize="15px">Tailored loan offers based on your latest CIBIL Score.</Text>
+                  <Text fontSize="16px">Tailored loan offers based on your latest CIBIL Score.</Text>
                 </GridItem>
            
 
